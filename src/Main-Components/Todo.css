@@ -1,0 +1,26 @@
+.Todo-container{
+    display: flex;
+    margin-bottom: 20px;
+    
+}
+
+.Todo-container .text{
+    padding: 0 5px;
+    width: 80%;
+    text-decoration-line: 100%;
+    position: relative;
+    font-size: 20px;
+}
+.Todo-container .text span{
+    font-size: 12px;
+}
+.Todo-container .text .line{
+    height: 1px;
+    background-color: #bebebe;
+    position: absolute;
+    top: 25.5%;
+    width: 0;
+}
+.Todo-container .text  .line-through{
+    width: 98%;
+}

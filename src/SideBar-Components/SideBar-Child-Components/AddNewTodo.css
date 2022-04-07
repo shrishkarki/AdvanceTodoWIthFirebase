@@ -1,0 +1,19 @@
+.addTodo{
+    border: none;
+    font-size: 14px;
+    width: 82%;
+    font-weight: bold;
+    height: 50px;
+    color: green !important;
+    margin: 5px 0px 5px 25px;
+    border-radius: 3px;
+    border: 1px solid  #34eb95;
+    /* margin-left: 25px; */
+
+
+}
+
+.addTodo:hover{
+    background-color: #34eb95;
+    color: white;
+}

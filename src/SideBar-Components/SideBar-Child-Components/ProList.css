@@ -1,0 +1,35 @@
+.projects-items ul{
+    list-style: none;
+    padding:10px 0 0 10px;
+    color: #139659;
+}
+.projects-items ul li{
+    margin-bottom: 7px ;
+    font-weight:600;
+    padding: 8px;
+    border-radius: 2px;
+}
+
+.projects-items ul li:hover{
+    background-color: aliceblue;
+    cursor: pointer;
+}
+.projects-items-list{
+    display: flex;
+    justify-content: space-between;
+}
+.projects-items-tools span:not(:last-child){
+    padding: 20px;
+    
+}
+.projects-items-todos{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #139659;
+    color: white;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}

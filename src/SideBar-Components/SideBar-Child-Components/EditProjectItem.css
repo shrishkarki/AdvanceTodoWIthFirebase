@@ -1,0 +1,51 @@
+.Edit-project-item{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.6);
+}
+.Edit-project-header{
+    display: flex;
+   
+}
+
+.Edit-project-container{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 400px;
+    background-color: white;
+   
+    position: absolute;
+    top: 25%;
+    left: 35%;
+}
+.Edit-Input-Item{
+    margin: 25px 0;
+    
+
+}
+.Edit-Input-Item input{
+    width: 100%;
+    font-size: 25px;
+    margin-right: 20px;
+}
+.btn-group button{
+width: 50%;
+border: none;
+padding: 8px 0;
+color: white;
+
+
+}
+.btn-group .btn-edit{
+ background-color: green;
+
+ 
+}
+
+.btn-group .btn-cancel{
+    background-color: red;
+}

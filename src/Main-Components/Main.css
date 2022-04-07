@@ -1,0 +1,11 @@
+body{
+    background-color: #97e6a7;
+}
+.main,.Edit-Todo{
+    width: 30%;
+    height: 90vh;
+    margin-top: 60px;
+    margin-left: 20px;
+    background-color: white;
+    padding: 10px 10px;
+}

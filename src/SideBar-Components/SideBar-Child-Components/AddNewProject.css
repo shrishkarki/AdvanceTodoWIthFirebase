@@ -1,0 +1,58 @@
+
+.AddNewProject{
+    
+    height: 100vh;
+    width: 100vw;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    background-color: rgba(0,0,0,0.6);
+
+}
+.AddNewProject-container{
+    height: auto;
+    width: 300px;
+    background-color: white;
+   
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    
+}
+.AddNewProject-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 5px;
+    align-items:center
+} 
+/* .AddNewProject{
+    margin-left:20px;
+} */
+.AddNewProject-input input{
+    margin-left:5%;
+    width: 95%;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    
+    
+    align-items: center;
+}
+ .btn button{
+     border: none;
+     width: 100%;
+    padding: 4px 0;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    
+}
+.btn button:hover{
+    background-color: rgb(120, 120, 223);
+    
+}

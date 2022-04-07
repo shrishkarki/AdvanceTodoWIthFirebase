@@ -1,0 +1,33 @@
+.calender{
+    /* padding-right: 20px;
+    margin: 10px 0 0 25px; */
+    margin: 5px 20px 5px 25px;
+    
+}
+.calender .header .title{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: green;
+    font-weight: 800;
+
+    
+}
+.calender-container ul{
+    list-style: none;
+    padding:10px 0 0 10px;
+    color: #139659;
+    
+}
+.calender-container ul li{
+    margin-bottom: 7px ;
+    font-weight:600;
+}
+.calender-list{
+    padding: 5px;
+    border-radius: 2px;
+}
+.calender-list:hover{
+    background-color: aliceblue;
+    cursor: pointer;
+}
