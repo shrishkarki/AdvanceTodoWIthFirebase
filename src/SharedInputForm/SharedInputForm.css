@@ -40,9 +40,13 @@ label{
     display: flex;
     
 }
+.chooseProject .projects .project.active{
+    background-color: green;
+    /* color: white; */
+} 
 .chooseProject .projects .project{
      margin: 5px;
-     border: 1px solid firebrick;
+     border: 1px solid rgb(34, 178, 94);
  
      padding: 7px 5px;
      border-radius: 2px;

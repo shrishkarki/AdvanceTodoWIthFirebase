@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {IndexContextProvider} from './Context/IndexContext'
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <IndexContextProvider>
+    <App/>
+    </IndexContextProvider>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );

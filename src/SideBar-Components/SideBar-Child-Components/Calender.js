@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Calendar, CaretUp } from 'react-bootstrap-icons';
 import './Calender.css';
+import { IndexContext } from '../../Context/IndexContext';
 
 const Calender = () => {
-  const calenderFormat=["Today", "Next 7 Days", "All Days " ];
+  const calenderFormat=["Today", "Next7Days", "All Days " ];
+  const {setSelectedProject}=useContext(IndexContext)
   return (
     <div className='calender'>
      <div className='header'>
@@ -20,7 +22,7 @@ const Calender = () => {
          return(
          <>
          
-           <li className='calender-list' key={days}>{days}</li>
+           <li className='calender-list' key={days} onClick={()=>setSelectedProject(days)}>{days}</li>
          
          </>)
        })}

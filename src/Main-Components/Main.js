@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import { IndexContext } from '../Context/IndexContext';
 import Todo from './Todo';
 import Next7days from './Next7days';
 import './Main.css';
@@ -24,20 +25,21 @@ const Main = () => {
         color:"#00ff00",
         project:"other"}
   ]
-  const selectedItems="Todo";
+  // const selectedItems="Todo";
+  const {selectedProject}=useContext(IndexContext);
   return (
     <>
     
     <div className='main'>
     <div className='main-header'>
-        {selectedItems}
+        {selectedProject}
       
       </div>
       <div className='main-container'>
-        {selectedItems=== "next 7 Days"?
+        {selectedProject=== "Next7Days"?
          <Next7days/>:
          appItems.map(todo=>{
-           return <Todo todoItems={todo} key={todo.id}/>
+           return <Todo todoItems={todo} keys={todo.id}/>
          })
          }
 

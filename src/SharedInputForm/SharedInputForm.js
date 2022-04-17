@@ -1,21 +1,19 @@
-import React ,{useState} from 'react';
-import './UserTodoInput.css';
+import React from 'react';
 import {Bell,Calendar, Clock, Palette} from 'react-bootstrap-icons';
 import { MuiPickersUtilsProvider ,DatePicker,TimePicker} from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
-// import { setDate } from 'date-fns';
-const UserTodoInput = () => {
-  const [todo,setTodo]=useState('');
-  const [day,setDay]=useState(new Date());
-  const [time,setTime]=useState(new Date());
+import './SharedInputForm.css';
 
+const SharedInputForm = ({heading,todo,setTodo,day,setDay,time,setTime,projectsItems,showButtons,todoProject,setTodoProject})=>{
+ 
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+   <>
+   <MuiPickersUtilsProvider utils={DateFnsUtils}>
     <form>
 
       {/* Input to add new Todo */}
         <div className='addTodoInput'>
-          <label htmlFor="todo">Add a new to do!</label>
+          {heading && <label htmlFor="todo">Add a new to do!</label>}
           <input type="text" id="todo" name='todo' value={todo} placeholder='To do......' onChange={(e)=>setTodo(e.target.value)} autoFocus/>
           
           <div className='title'>
@@ -46,28 +44,45 @@ const UserTodoInput = () => {
         </div>
 
         {/* Choose Project */}
-
         <div className='chooseProject'>
           <Palette/> <span>Choose Project</span>
-
           <div className='projects'>
-            <div className='project active'>
-              personal
-            </div>
-            <div className='project'>
-              work
-            </div>
+          {projectsItems.length >0?
+              projectsItems.map(project=>{
+                  return(
+                    <>
+                    
+                      <div className={`project ${project.name===todoProject?'active':""}`}>
+                      <span onClick={()=>setTodoProject(project.name)}>{project.name}</span>
+                    </div>
+                   
+                    
+                  
+                  
+                  </>
+                  
+                    
+                  
+                  )
+              }):
+                <div style={{color:'#ff0000'}}>
+                        Please Add a project before proceeding
+                      </div> 
+          }
           </div>
-
-        </div>
+          
         
-        <div className='submitBtn'>
+         
+       
+         </div>
+        
+        {showButtons && <div className='submitBtn'>
         <button type="submit" >+ Add TODO</button>
-        </div>
+        </div>}
         
         </form>
-        </MuiPickersUtilsProvider>
+        </MuiPickersUtilsProvider></>
   )
 }
 
-export default UserTodoInput
+export default SharedInputForm

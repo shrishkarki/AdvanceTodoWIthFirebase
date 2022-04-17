@@ -2,10 +2,10 @@ import React,{useState} from 'react';
 import { CheckCircleFill,Circle, Trash, ArrowClockwise } from 'react-bootstrap-icons';
 import './Todo.css';
 
-const Todo = ({todoItems}) => {
+const Todo = ({todoItems,keys}) => {
   const [hover,setHover]=useState(false);
   return (
-    <div className='Todo'>
+    <div className='Todo' key={keys}>
       <div
        className='Todo-container'
        onMouseEnter={()=>setHover(true)}

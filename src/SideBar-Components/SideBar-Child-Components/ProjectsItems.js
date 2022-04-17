@@ -1,12 +1,16 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import './ProList.css';
 import { PencilFill, XCircle} from 'react-bootstrap-icons';
 import EditProjectItem from './EditProjectItem';
+import { IndexContext } from '../../Context/IndexContext';
+
 
 
 const ProjectsItems = ({statusEdit,items,deleteFn,onSaveProps}) => {
   const [editProjectItem,setEditProjectItem]=useState(false);
   const [inputData,setInputData]=useState('');
+
+  const {setSelectedProject}=useContext(IndexContext);
 
 
 
@@ -48,8 +52,10 @@ const ProjectsItems = ({statusEdit,items,deleteFn,onSaveProps}) => {
     <div className='projects-items'>
         <ul>{items.map(pro=>{
             return(
-              <li key={pro.id} className="projects-items-list">
-                  <span>{pro.name}</span>
+             
+           <li key={pro.id} className="projects-items-list" >
+             
+                 <span onClick={()=>setSelectedProject(pro.name)}>{pro.name}</span>
                   {statusEdit &&
                    (<div className='projects-items-tools'>
                      <span><PencilFill color="blue" onClick={()=>handleEditClick(pro)} /> </span> 
@@ -60,8 +66,13 @@ const ProjectsItems = ({statusEdit,items,deleteFn,onSaveProps}) => {
                   {!statusEdit &&
                    pro.numberOfTodos > 0 && 
                    (<div className='projects-items-todos'>{pro.numberOfTodos}</div>)}
-                   </li>  
+                  
+                   </li>
+
+                  
             );
+          
+           
         })}</ul>
 
         {/* {editProjectItem && <EditProjectItem status={()=>setEditProjectItem(true)}/>} */}

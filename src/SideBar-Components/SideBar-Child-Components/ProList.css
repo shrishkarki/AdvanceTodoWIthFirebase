@@ -18,6 +18,9 @@
     display: flex;
     justify-content: space-between;
 }
+/* .projects-items-list span{
+    width: 60%;
+} */
 .projects-items-tools span:not(:last-child){
     padding: 20px;
     
@@ -32,4 +35,5 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+    
 }
