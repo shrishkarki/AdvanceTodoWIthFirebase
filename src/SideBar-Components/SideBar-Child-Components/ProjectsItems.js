@@ -64,8 +64,8 @@ const ProjectsItems = ({statusEdit,items,deleteFn,onSaveProps}) => {
                      )}
 
                   {!statusEdit &&
-                   pro.numberOfTodos > 0 && 
-                   (<div className='projects-items-todos'>{pro.numberOfTodos}</div>)}
+                   pro.numOfTodos > 0 && 
+                   (<div className='projects-items-todos'>{pro.numOfTodos}</div>)}
                   
                    </li>
 

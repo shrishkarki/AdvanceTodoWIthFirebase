@@ -11,14 +11,15 @@ const IndexContext=createContext();
 const IndexContextProvider = ({children}) => {
     const defaultSelectedOProject='Today';
     const [selectedProject,setSelectedProject]=useState(defaultSelectedOProject);
-    const todos=useCustomTodosFirebase();
-    const projects=useCustomProjectsFirebase(todos);
+    var todos=useCustomTodosFirebase();
+    const projectsItems=useCustomProjectsFirebase(todos);
+
+    console.log(projectsItems)
     
-    console.log(todos)
-    console.log(projects)
+  
 
   return (
-    <IndexContext.Provider value={{selectedProject,setSelectedProject,todos,projects}}>
+    <IndexContext.Provider value={{selectedProject,setSelectedProject,todos,projectsItems}}>
         {children}
     </IndexContext.Provider>
   )

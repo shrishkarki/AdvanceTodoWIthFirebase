@@ -20,11 +20,11 @@ const Calender = () => {
 
      <ul> {calenderFormat.map(days=>{
          return(
-         <>
+         <div key={days}>
          
-           <li className='calender-list' key={days} onClick={()=>setSelectedProject(days)}>{days}</li>
+           <li className='calender-list'  onClick={()=>setSelectedProject(days)}>{days}</li>
          
-         </>)
+         </div>)
        })}
        </ul>
 

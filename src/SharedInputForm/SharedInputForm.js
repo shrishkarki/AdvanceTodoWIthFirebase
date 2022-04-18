@@ -1,11 +1,12 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import {Bell,Calendar, Clock, Palette} from 'react-bootstrap-icons';
 import { MuiPickersUtilsProvider ,DatePicker,TimePicker} from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import './SharedInputForm.css';
+import { IndexContext } from '../Context/IndexContext';
 
-const SharedInputForm = ({heading,todo,setTodo,day,setDay,time,setTime,projectsItems,showButtons,todoProject,setTodoProject})=>{
- 
+const SharedInputForm = ({heading,todo,setTodo,day,setDay,time,setTime,showButtons,todoProject,setTodoProject})=>{
+  const {projectsItems}=useContext(IndexContext);
   return (
    <>
    <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -50,16 +51,16 @@ const SharedInputForm = ({heading,todo,setTodo,day,setDay,time,setTime,projectsI
           {projectsItems.length >0?
               projectsItems.map(project=>{
                   return(
-                    <>
+                    <div key={project.name}>
                     
-                      <div className={`project ${project.name===todoProject?'active':""}`}>
-                      <span onClick={()=>setTodoProject(project.name)}>{project.name}</span>
+                      <div  className={`project ${project.name===todoProject?'active':""}` }>
+                      <span  onClick={()=>setTodoProject(project.name)}>{project.name}</span>
                     </div>
                    
                     
                   
                   
-                  </>
+                  </div>
                   
                     
                   

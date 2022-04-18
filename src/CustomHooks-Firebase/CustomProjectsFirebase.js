@@ -1,34 +1,50 @@
 import {useEffect, useState} from 'react';
 import { db } from '../Firebase/IndexFirebase';
+import { collection,  getDocs } from 'firebase/firestore';
 
 
 
 
-export const useCustomProjectsFirebase = (todos) => {
-    const [project,setProjects]=useState([]);
+
+export let useCustomProjectsFirebase = (todos) => {
+    const [project,setProject]=useState([]);
+   
    
     const calculateNumOfTodos=(projectName,todos)=>{
-        return todos.filter(todo=>todo.projectName===projectName).length}
-
+        return todos.filter(todo=>todo.projectName===projectName).length
     
- 
+}
 
+
+
+
+
+    const projectCollectionRef=collection(db, "project");
+    
     useEffect(()=>{
-        let unsubscribe=db.firestore().collection('project').onSnapshot(snapshot=>{
-            const data=snapshot.docs.map(doc=>{
-                const projectName=doc.data().name;
-                return{
-                    id:doc.id,
-                    name:projectName,
-                    numOfTodos:calculateNumOfTodos(projectName,todos)
-                }
-            })
+        getProject();
+    },[todos]);
 
-                setProjects(data);
+    const getProject=async()=>{
+        
+        const data=await getDocs(projectCollectionRef);
+        // console.log(data.docs.data());
+        setProject(data.docs.map((doc)=>(
+            // {console.log(doc.data().name)}
+            {...doc.data(),
+            id:doc.id,
+            numOfTodos:calculateNumOfTodos(doc.data().name,todos)
+        })))
 
-            })
-            return()=>unsubscribe()
-        })
-         return {project}
+        // console.log(data.docs.map((d)=>d.data().name))
 
-        }
+        
+
+
+
+
+    }
+
+    return project
+
+    }

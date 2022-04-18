@@ -4,11 +4,11 @@ import './ModalPopUp.css';
 import SharedInputForm from "../../SharedInputForm/SharedInputForm";
 import { X } from "react-bootstrap-icons";
 import { IndexContext } from "../../Context/IndexContext";
-const projectsItems=[
-  {id:1,name:"other",numberOfTodos:4},
-  {id:2,name:"work",numberOfTodos:0},
-  {id:3,name:"personal",numberOfTodos:3}
-];
+// const projectsItems=[
+//   {id:1,name:"other",numberOfTodos:4},
+//   {id:2,name:"work",numberOfTodos:0},
+//   {id:3,name:"personal",numberOfTodos:3}
+// ];
 const ModalPopUp=({statusModal})=>{
    const {selectedProject}=useContext(IndexContext);
     const [todo,setTodo]=useState('');
@@ -30,7 +30,7 @@ const ModalPopUp=({statusModal})=>{
           setDay={setDay}
           time={time}
           setTime={setTime}
-          projectsItems={projectsItems}
+          // projectsItems={projectsItems}
           showButtons={true}
           todoProject={todoProject}
           setTodoProject={setTodoProject}

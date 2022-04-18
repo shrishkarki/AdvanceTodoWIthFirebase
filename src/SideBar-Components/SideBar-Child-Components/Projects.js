@@ -1,18 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState,useContext, useEffect } from 'react';
 import { Palette, Pencil, Plus, CaretUp, Flag} from 'react-bootstrap-icons';
 import './Projects.css';
 import ProjectsItems from './ProjectsItems';
 import AddNewProject from './AddNewProject';
-const projectsItems=[
-    {id:1,name:"other",numberOfTodos:4},
-    {id:2,name:"work",numberOfTodos:0},
-    {id:3,name:"personal",numberOfTodos:3}
-];
+import { IndexContext } from '../../Context/IndexContext';
+// const projectsItems=[
+//     {id:1,name:"other",numberOfTodos:4},
+//     {id:2,name:"work",numberOfTodos:0},
+//     {id:3,name:"personal",numberOfTodos:3}
+// ];
 
 const Projects = () => {
+    const {projectsItems}=useContext(IndexContext);
     const [items,setItems]=useState(projectsItems);
     const [editProject,setEditProject]=useState(false);
     const [addProject,setAddProject]=useState(false);
+
+    useEffect(()=>{
+        setItems(projectsItems)
+    },[projectsItems])
     
     
     

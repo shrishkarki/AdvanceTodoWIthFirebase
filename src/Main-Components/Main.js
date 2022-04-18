@@ -6,27 +6,27 @@ import './Main.css';
 import EditTodo from './EditTodo';
 
 const Main = () => {
-  const appItems=[
-    {id:11,
-      name:"Go to market",
-      time:"11:25 AM",
-      date:"08/02/2022",
-      day:"1",
-      checked:true,
-      color:"#00ff00",
-      project:"work"},
+  // const appItems=[
+  //   {id:11,
+  //     name:"Go to market",
+  //     time:"11:25 AM",
+  //     date:"08/02/2022",
+  //     day:"1",
+  //     checked:true,
+  //     color:"#00ff00",
+  //     project:"work"},
 
-      {id:11,
-        name:"Visit the Office",
-        time:"09:20 PM",
-        date:"07/03/2022",
-        day:"3",
-        checked:false,
-        color:"#00ff00",
-        project:"other"}
-  ]
+  //     {id:12,
+  //       name:"Visit the Office",
+  //       time:"09:20 PM",
+  //       date:"07/03/2022",
+  //       day:"3",
+  //       checked:false,
+  //       color:"#00ff00",
+  //       project:"other"}
+  // ]
   // const selectedItems="Todo";
-  const {selectedProject}=useContext(IndexContext);
+  const {todos,selectedProject}=useContext(IndexContext);
   return (
     <>
     
@@ -38,8 +38,8 @@ const Main = () => {
       <div className='main-container'>
         {selectedProject=== "Next7Days"?
          <Next7days/>:
-         appItems.map(todo=>{
-           return <Todo todoItems={todo} keys={todo.id}/>
+         todos.map(todo=>{
+           return <Todo todoItems={todo} key={todo.id}/>
          })
          }
 

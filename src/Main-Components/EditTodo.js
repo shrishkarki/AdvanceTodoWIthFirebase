@@ -5,11 +5,11 @@ import { IndexContext } from '../Context/IndexContext';
 
 const EditTodo = () => {
   const {selectedProject}=useContext(IndexContext);
-  const projectsItems=[
-    {id:1,name:"other",numberOfTodos:4},
-    {id:2,name:"work",numberOfTodos:0},
-    {id:3,name:"personal",numberOfTodos:3}
-];
+//   const projectsItems=[
+//     {id:1,name:"other",numberOfTodos:4},
+//     {id:2,name:"work",numberOfTodos:0},
+//     {id:3,name:"personal",numberOfTodos:3}
+// ];
 const [todo,setTodo]=useState('');
 const [day,setDay]=useState(new Date());
 const [time,setTime]=useState(new Date());
@@ -32,7 +32,7 @@ useEffect(()=>{
           setDay={setDay}
           time={time}
           setTime={setTime}
-          projectsItems={projectsItems}
+          // projectsItems={projectsItems}
           showButtons={false}
           todoProject={todoProject}
           setTodoProject={setTodoProject}

@@ -2,10 +2,10 @@ import React,{useState} from 'react';
 import { CheckCircleFill,Circle, Trash, ArrowClockwise } from 'react-bootstrap-icons';
 import './Todo.css';
 
-const Todo = ({todoItems,keys}) => {
+const Todo = ({todoItems}) => {
   const [hover,setHover]=useState(false);
   return (
-    <div className='Todo' key={keys}>
+    <div className='Todo' >
       <div
        className='Todo-container'
        onMouseEnter={()=>setHover(true)}
@@ -28,7 +28,7 @@ const Todo = ({todoItems,keys}) => {
          {/* for text  */}
            <div className='text'>
              <p style={{color:todoItems.checked?'#bebebe':'#000'}}>{todoItems.name}</p>
-             <span>{todoItems.time}-{todoItems.project}</span>
+             <span>{todoItems.time}-{todoItems.projectName}</span>
              <div className={`line ${todoItems.checked?"line-through":""}`}></div>
            </div>
 
